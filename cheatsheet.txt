@@ -1,0 +1,6 @@
+git add 
+git commit -m ""
+git push
+cd to go into directory
+ls to view file
+gedit (filename)
