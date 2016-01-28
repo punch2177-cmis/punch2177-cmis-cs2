@@ -30,3 +30,35 @@ print "Banana"
 print "Oranges"
 print "Watermelon"
 print ("Apple", "Banana", "Oranges", "Watermelon")
+favoriteColor = ("Saphhire", "Blue")
+print favoriteColor
+myName = "Suchaya"
+print myName
+testTomorrow = ("Biology", "Geometry")
+print testTomorrow
+myBuddy = "Disgust"
+print myBuddy
+gradGrade = 12
+myGrade = 9
+yearsToGrad = gradGrade - myGrade
+print yearsToGrad
+t = 4 * 5
+print t
+p = 3 + 2
+print p
+x= 6 / 3
+print x
+y = 5 ** 8
+print y
+w = 6 % 6
+print w
+e = 5 % 4
+print e
+r = 6 % 3
+print r
+g = 10 % 5
+print g
+h = 9 % 3
+print h
+k = 10 // 5
+print k
