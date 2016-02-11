@@ -27,9 +27,11 @@ def area(a, b, c):
     s = (a+b+c)/2
     return (s*(s-a)*(s-b)*(s-c)) ** 0.5
 print area(1,2,2.5)
-def right_align(string):
-    return
-def cetner(string);
-    return
-def msg_box(string):
-    return "|string|"
+def right_align(word):
+	return str((80 - len(word))*" " + word)
+print right_align("Hello")
+def center(word):
+	return str((40 - len(word))*" "+word)
+print center("Hello")  
+def msg_box(word):  
+	return "+" + (len(word)*"-") + "+" \n "|" + word + "|" \n "+" + (len(word)*"-") + "+"
