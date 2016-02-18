@@ -14,7 +14,9 @@ def circle_area(radius):
 def sphere_volume(radius):
     return 4.0/3 * math.pi * radius **3
 def avg_volume(a, b):
-    return ((1.0/6 * math.pi * a**3) + (1.0/6 * math.pi * b**3)) / 2
+    volume_1 = (circle_area(a-(1.0/2 * a)))
+    volume_2 = (circle_area(b-(1.0/2 * b)))
+    return volume_1 + volume_2 /2
 def area(a, b, c):
     s = (a+b+c)/2
     return (s*(s-a)*(s-b)*(s-c)) ** 0.5
@@ -25,50 +27,62 @@ def center(word):
 def msg_box(word):  
 	return "+" + ((len(word) + 4)*"-") + "+" + '\n' + "|" + (2*" ") + word + (2*" ") + "|" + '\n' + "+" + ((len(word) + 4)*"-") + "+"
 w = add(2,3)
-print w
-w = add(2,3)
-print w
+a = add(3,3)
+
 x = sub(3,2)
-print x
-x = sub(3,2)
-print x
+b = sub(4,2)
+
 y = mul(4,4)
-print y
-y = mul(4,4)
-print y
+c = mul(5,4)
+
 t = div(2,3)
-print t
-t = div(2,3)
-print t
+d = div(9,3)
+
 u = hours_from_seconds(86400)
-print u
-u = hours_from_seconds(86400)
-print u
+e = hours_from_seconds(3600)
+
 f = circle_area(5)
-print f
-f = circle_area(5)
-print f
+q = circle_area(7)
+
 h = sphere_volume(5)
-print h
-h = sphere_volume(5)
-print h
+o = sphere_volume(9)
+
 i = avg_volume(10,20)
-print i
-i = avg_volume(10,20)
-print i
+v = avg_volume(19,20)
+
 k = area(1,2,2.5)
-print k
-k = area(1,2,2.5)
-print k
+n = area(2,2,2.5)
+
 l = right_align("Hello")
-print l
-l = right_align("Hello")
-print l
+s = right_align("Hi")
+
 hi = center("Hello") 
-print hi
-hi = center("Hello") 
-print hi
+hi_2 = center("Hi") 
+
 message = msg_box("Hello")
-print message
 message_2 = msg_box ("I eat cats!")
+
+print msg_box(str(w))
+print msg_box(str(a))
+print msg_box(str(x))
+print msg_box(str(b))
+print msg_box(str(y))
+print msg_box(str(c))
+print msg_box(str(t))
+print msg_box(str(d))
+print msg_box(str(u))
+print msg_box(str(e))
+print msg_box(str(f))
+print msg_box(str(q))
+print msg_box(str(h))
+print msg_box(str(o))
+print msg_box(str(i))
+print msg_box(str(v))
+print msg_box(str(k))
+print msg_box(str(n))
+print msg_box(str(l))
+print msg_box(str(s))
+print msg_box(str(hi))
+print msg_box(str(hi_2))
+print message
 print message_2
