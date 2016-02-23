@@ -14,8 +14,8 @@ def circle_area(radius):
 def sphere_volume(radius):
     return 4.0/3 * math.pi * radius **3
 def avg_volume(a, b):
-    volume_1 = (circle_area(a-(1.0/2 * a)))
-    volume_2 = (circle_area(b-(1.0/2 * b)))
+    volume_1 = (sphere_volume(a-(1.0/2 * a)))
+    volume_2 = (sphere_volume(b-(1.0/2 * b)))
     return volume_1 + volume_2 /2
 def area(a, b, c):
     s = (a+b+c)/2
