@@ -54,11 +54,11 @@ import math
 def area_diameter(x): 
     radius = math.sqrt(x/ math.pi)
     return radius * 2
-#1pt for header line 
-#1pt for parameter names
-#1pt for return value
-#1pt for correct output format
-#3pt for correct use of format function
+#1pt for header line (1pt)
+#1pt for parameter names (1pt)
+#1pt for return value (1pt)
+#1pt for correct output format (1pt)
+#3pt for correct use of format function (3pts)
 def output(d1, d2, d3, total):
     out = """
 Circle  Diameter
@@ -69,12 +69,12 @@ Totals  {}
 """.format(d1, d2, d3, total)
     return out
 
-#1pt header line
-#1pt getting input
-#1pt converting input
-#1pt for calling output function
-#2pt for correct diameter formula
-#1pt for variable names
+#1pt header line (1pt)
+#1pt getting input (1pt)
+#1pt converting input (1pt)
+#1pt for calling output function (1pt)
+#2pt for correct diameter formula (2pts)
+#1pt for variable names (1pt)
 def main():
 
     C1 = raw_input("Area of C1: ")
@@ -89,9 +89,9 @@ def main():
     out = output(d1, d2, d3, total)
     print out
 
-#1pt for calling main
+#1pt for calling main (1pt)
 main()
 
-#1pt explanatory comments
-#1pt code format
+#1pt explanatory comments (0pt)
+#1pt code format (1pt)
 
