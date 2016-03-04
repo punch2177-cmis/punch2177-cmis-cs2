@@ -1,4 +1,4 @@
-#Part 1: Terminology (15 points)
+#Part 1: Terminology (15 points) terminology - 15/15 programming - 23/25
 #1 1pt) What is the symbol "=" used for? (1pt)
 # the symbol "=" is called the assignment operator 
 # it is used to put a value into a variable
@@ -49,6 +49,7 @@
 #3 pt for correct formula (3pts)
 #1 pt for return value (1pt)
 #1 pt for parameter name (0pt)
+# I didn't put in a clear parameter name
 #1 pt for function name (1pt)
 import math 
 def area_diameter(x): 
@@ -93,5 +94,6 @@ def main():
 main()
 
 #1pt explanatory comments (0pt)
+#I didn't put in explanatory comments
 #1pt code format (1pt)
 
