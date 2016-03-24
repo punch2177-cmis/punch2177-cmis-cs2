@@ -50,6 +50,26 @@ Answer (type a, b, c, or d):
     else:
         return random.randint(1, 4)
 
+def determine():
+    friend = raw_input("""
+How many friends do you think you have?
+a. Only imaginary ones
+b. I have tons, you could say I'm the popular kid
+c. I have a small group of tight-knit friends 
+d. I have one really close best friend	
+Answer (type a, b, c, or d):             
+                        """)
+    if friend == "a":
+        return 1
+    elif friend == "b":
+        return 2
+    elif friend == "c":
+        return 3
+    elif friend == "d": 
+        return 4
+    else:
+        return random.randint(1,4)
+
 def calculation(vacation, enemies):    
     add = enemies + vacation
     if add > 3 and add < 7:
@@ -69,12 +89,25 @@ def how(calculation):
     else: 
         return True
 
+def calculation2(friend):
+    target = random.random()
+    target2 = random.random()
+    result = friend * target
+    counterResult = friend * target2
+    if result > counterResult:
+        return True
+    else:
+        return False 
 
-def death(years, how):
-    if how == True:
+def death(years, how, calculation2):
+    if how and calculation2:
         return """
 You will die in {} years. You will die while you are asleep. Congratulations, it will be a peaceful death.
             """.format(years)
+    elif how or calculation2:
+        return """
+Surprise! You are actually immortal and can live as long as possible without aging. This could be a blessing and a curse.
+"""
     else:
         return """
 You will die in {} years. There will be a devastating car crash that will ultimately result in your death. Sorry, it will be a painful death.
@@ -90,8 +123,10 @@ def main():
     numberOfEnemies = enemy()
     calc = calculation(location, numberOfEnemies)   
     situation = how(calc)
+    anotherQuestion = determine()
+    anotherCalculation = calculation2(anotherQuestion)
 
-    output = death(numberOfYears, situation)
+    output = death(numberOfYears, situation, anotherCalculation)
 
     print output
 
