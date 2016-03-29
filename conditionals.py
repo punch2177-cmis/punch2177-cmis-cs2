@@ -70,6 +70,26 @@ Answer (type a, b, c, or d):
     else:
         return random.randint(1,4)
 
+def determine2():
+	hobby = raw_input("""
+Which of these things would you most likely be doing during the weekend?
+a. Playing videogames 
+b. Playing a musical instrument
+c. Reading 
+d. Playing sports	
+Answer (type a, b, c, or d):             
+                        """)
+    if hobby == "a":
+        return 1
+    elif hobby == "b":
+        return 2
+    elif hobby == "c":
+        return 3
+    elif hobby == "d": 
+        return 4
+    else:
+        return random.randint(1,4)
+
 def calculation(vacation, enemies):    
     add = enemies + vacation
     if add > 3 and add < 7:
@@ -89,11 +109,11 @@ def how(calculation):
     else: 
         return True
 
-def calculation2(friend):
+def calculation2(friend, hobby):
     target = random.random()
     target2 = random.random()
-    result = friend * target
-    counterResult = friend * target2
+    result = (friend * target) - hobby
+    counterResult = (friend * target2) - hobby
     if result > counterResult:
         return True
     else:
@@ -104,14 +124,14 @@ def death(years, how, calculation2):
         return """
 You will die in {} years. You will die while you are asleep. Congratulations, it will be a peaceful death.
             """.format(years)
+    elif how and calculation2 == False:
+        return """
+You will die in {} years. There will be a devastating car crash that will ultimately result in your death. Sorry, it will be a painful death.
+            """.format(years)
     elif how or calculation2:
         return """
 Surprise! You are actually immortal and can live as long as possible without aging. This could be a blessing and a curse.
 """
-    else:
-        return """
-You will die in {} years. There will be a devastating car crash that will ultimately result in your death. Sorry, it will be a painful death.
-            """.format(years)
 
 def main():
     print "Hello, and welcome to the Death Guessing Game"
@@ -123,8 +143,9 @@ def main():
     numberOfEnemies = enemy()
     calc = calculation(location, numberOfEnemies)   
     situation = how(calc)
+    freeTime = determine2()
     anotherQuestion = determine()
-    anotherCalculation = calculation2(anotherQuestion)
+    anotherCalculation = calculation2(anotherQuestion, freeTime)
 
     output = death(numberOfYears, situation, anotherCalculation)
 
