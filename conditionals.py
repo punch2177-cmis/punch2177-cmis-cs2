@@ -1,4 +1,4 @@
-#My script will determine how you will die, whether it is in the near furture or 30 years away. I will take in random information about the player and ask them to make desicions. There desicions will consequently tell them about how they die. First, they will be asked how old they are and what their favorite number is to determine how long they have left to live. The second question asks about their favorite vacation spot in order to help determine how they will die in the next function. The vacation spot will determine whether the how function will return true or false. If true is returned then they will die a peaceful death but if false is returned then they will die a painful death.  
+#My script will determine how you will die, whether it is in the near furture or 30 years away. I will take in random information about the player and ask them to make desicions. There desicions will consequently tell them about how they die. First, they will be asked how old they are and what their favorite number is to determine how long they have left to live. The second question asks about their favorite vacation spot in order to help determine how they will die in the next function. The second question is to determine how many enemies they have. The vacation spot and the number of enemies will determine whether the "how" function will return True or False. The next questions asks what they like to do on the weekends and how many friends they think they have. The value from the two functions will be used in the "calculation2" function and it will either return true or false. If true is returned in both the "how" and the "calculation2" function, then they will die a peaceful death. If, however, both of the fuctions return false then they will die a painful death. Another option is if at least one of the functions return true, then it will tell them that they are actually immortal.  
 import random
 import math
 def yearsLeft(age, favNumber):
@@ -50,7 +50,27 @@ Answer (type a, b, c, or d):
     else:
         return random.randint(1, 4)
 
-def determine():
+def weekend():
+    hobby = raw_input("""
+Which of these would you most likely be doing over the weekends?
+a. Playing videogames
+b. Watching TV
+c. Playing sports
+d. Reading
+Answer (type a, b, c, or d):             
+                        """)
+    if hobby == "a":
+        return 1
+    elif hobby == "b":
+        return 2
+    elif hobby == "c":
+        return 3
+    elif hobby == "d":
+        return 4
+    else:
+        return random.randint(1, 4)
+
+def friendQuestion():
     friend = raw_input("""
 How many friends do you think you have?
 a. Only imaginary ones
@@ -70,26 +90,6 @@ Answer (type a, b, c, or d):
     else:
         return random.randint(1,4)
 
-def determine2():
-	hobby = raw_input("""
-Which of these things would you most likely be doing during the weekend?
-a. Playing videogames 
-b. Playing a musical instrument
-c. Reading 
-d. Playing sports	
-Answer (type a, b, c, or d):             
-                        """)
-    if hobby == "a":
-        return 1
-    elif hobby == "b":
-        return 2
-    elif hobby == "c":
-        return 3
-    elif hobby == "d": 
-        return 4
-    else:
-        return random.randint(1,4)
-
 def calculation(vacation, enemies):    
     add = enemies + vacation
     if add > 3 and add < 7:
@@ -101,13 +101,13 @@ def calculation(vacation, enemies):
     return add
 
 def how(calculation):
-    determine = int(random.randint(1, 10))
-    situation = calculation * determine - abs(determine - calculation)  
+    determine = random.randint(1,10)
+    situation = (calculation * determine) - abs(calculation - determine)    
     counterSituation = calculation * random.random()
-    if situation < counterSituation:
-        return False
-    else: 
+    if situation > counterSituation:
         return True
+    else: 
+        return False
 
 def calculation2(friend, hobby):
     target = random.random()
@@ -132,6 +132,10 @@ You will die in {} years. There will be a devastating car crash that will ultima
         return """
 Surprise! You are actually immortal and can live as long as possible without aging. This could be a blessing and a curse.
 """
+    else: 
+        return """
+You will die in {} years. There will be a devastating car crash that will ultimately result in your death. Sorry, it will be a painful death.
+            """.format(years)
 
 def main():
     print "Hello, and welcome to the Death Guessing Game"
@@ -141,13 +145,14 @@ def main():
     numberOfYears = yearsLeft(age, favNumber)
     location = vacation()
     numberOfEnemies = enemy()
-    calc = calculation(location, numberOfEnemies)   
-    situation = how(calc)
-    freeTime = determine2()
-    anotherQuestion = determine()
-    anotherCalculation = calculation2(anotherQuestion, freeTime)
+    Friends = friendQuestion()
+    freeTime = weekend()
 
-    output = death(numberOfYears, situation, anotherCalculation)
+    calc = calculation(location, numberOfEnemies)   
+    determine = how(calc)
+    anotherCalculation = calculation2(Friends, freeTime)
+
+    output = death(numberOfYears, determine, anotherCalculation)
 
     print output
 
