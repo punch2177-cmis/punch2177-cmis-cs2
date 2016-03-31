@@ -34,7 +34,7 @@
 #problem3_d)0.25
 #
 #problem4_a)24
-#problem4_b)5
+#problem4_b)6
 #problem4_c)1.25
 #problem4_d)5
 #
