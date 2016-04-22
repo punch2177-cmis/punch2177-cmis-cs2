@@ -1,7 +1,6 @@
 
-
 def countup(n):
-    if n >= 10:
+    if n > 10:
         print "10"
     else:
         print n
@@ -13,11 +12,31 @@ def countup_2(start, stop):
     else:
         print start
         countup_2(start + 1, stop)
-          
-            
-        
+
+def countdown(start, stop):
+    if stop < start:
+        print "Done"
+    else:
+        print stop
+        countdown(start, stop - 1)
+
+def adder():
+    running_total = 0
+    number = raw_input("Next number: ")
+    if number == "":
+        print "Running total"
+    else: 
+        total = running_total + float(number)
+        print total
+        adder()
+      
+
 def main():
-    number = countup_2(-89,2)
+     smth = adder()
 
 main()
+
+
+          
+            
 
