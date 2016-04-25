@@ -22,11 +22,12 @@ def countdown(start, stop):
 
 def adder():
     running_total = 0
+    print "Running total = 0"
     number = raw_input("Next number: ")
     if number == "":
-        print "Running total"
+        print "Running total: " + running_total
     else: 
-        total = running_total + float(number)
+        total = running_total += float(number)
         print total
         adder()
       
