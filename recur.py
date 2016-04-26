@@ -20,20 +20,20 @@ def countdown(start, stop):
         print stop
         countdown(start, stop - 1)
 
-def adder():
-    running_total = 0
-    print "Running total = 0"
+def adder(running_total):
     number = raw_input("Next number: ")
     if number == "":
-        print "Running total: " + running_total
+        print "Running total: " + str(running_total)
     else: 
-        total = running_total += float(number)
-        print total
-        adder()
+        total = running_total + float(number)
+        print "Running total: " + str(total)
+        adder(running_total + total)
+
       
 
 def main():
-     smth = adder()
+    running_total = 0
+    smth = adder(running_total)
 
 main()
 
