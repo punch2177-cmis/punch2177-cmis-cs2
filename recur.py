@@ -27,13 +27,36 @@ def adder(running_total):
     else: 
         total = running_total + float(number)
         print "Running total: " + str(total)
-        adder(running_total + total)
+        adder(running_total + float(number))
 
+def biggest(number):
+    new = raw_input("Next: ")
+    if new == "":
+        print number
+    elif float(new) > number:
+        biggest(float(new))
+    elif number > float(new):
+        biggest(number)
+    
+def smallest(number):
+    new = raw_input("Next: ")
+    if new == "":
+        print number
+    elif float(new) < number:
+        smallest(float(new))
+    elif number < float(new):
+        smallest(number)       
+
+def  
       
 
 def main():
     running_total = 0
-    smth = adder(running_total)
+    number = 0
+    number2 = 
+    a = biggest(number)
+    b = smallest(number2)
+
 
 main()
 
