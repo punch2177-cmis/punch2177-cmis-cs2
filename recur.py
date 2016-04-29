@@ -46,16 +46,21 @@ def smallest(number):
         smallest(float(new))
     elif number < float(new):
         smallest(number)       
-
-def  
       
+def pow(x, y):
+    if x:
+    else:
+        print x * (x ** (n-1))
+        
+
 
 def main():
     running_total = 0
     number = 0
-    number2 = 
+    number2 = float("inf")
     a = biggest(number)
     b = smallest(number2)
+   
 
 
 main()
