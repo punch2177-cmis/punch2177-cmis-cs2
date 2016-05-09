@@ -1,5 +1,5 @@
 def guess(random, tries):
-    think = int(raw_input("I am thinking of a number between 0 and 100.\nWhat do you think it is?: "))
+    think = int(raw_input("What do you think it is?: "))
     if tries == 0:
         print "You are not good at this game"
         return float(0)
@@ -17,7 +17,8 @@ def guess(random, tries):
 
 def rounds(tries, numberofRounds, correct):
     import random
-    random = random.randint(0,100)   
+    random = random.randint(0,100) 
+    print "I am thinking of a number between 0 and 100"  
     if numberofRounds == 0:
         print correct
     elif numberofRounds != 0:
