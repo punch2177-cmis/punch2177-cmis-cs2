@@ -38,12 +38,10 @@ If it is too high, type "High"
 If it is correct, type "Correct"
 """)
     if correct == "High":
-        highest = correct
-        bonus((highest-correct)/2, tries - 1, highest, lowest)
+        bonus((computer + ((computer - highest)/2)), tries - 1, computer, lowest)
         return 0
     elif correct == "Low":
-        lowest = correct
-        bonus((highest-lowest)/2, tries - 1, highest, lowest)
+        bonus(((highest-computer)/2) + computer, tries - 1, highest, computer)
         return 0
     elif correct == "Correct":
         print "You are correct"
@@ -56,9 +54,9 @@ def bonus_rounds(tries, numberofRounds, correct):
         print correct
     elif numberofRounds != 0:
         user = int(raw_input("Pick a number from 0 to 100: "))
-        highest = 101
+        highest = 100
         lowest = 0
-        rounds = bonus(computer, tries)
+        rounds = bonus(computer, tries, highest, lowest)
         total1 = float(correct) + float(rounds)
         print "\nYou have " + str(numberofRounds - 1) + " rounds left\n"
         bonus_rounds(tries, numberofRounds - 1, total1)    
@@ -69,7 +67,7 @@ def main():
     numberofRounds = 3
     correct = 0
     computer = random.randint(0,100)
-   # a = rounds(tries, numberofRounds, correct)
+    #a = rounds(tries, numberofRounds, correct)
     b = bonus_rounds(tries, numberofRounds, correct)
 
 main()
