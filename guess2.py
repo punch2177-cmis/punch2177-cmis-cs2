@@ -2,7 +2,7 @@ def guess(random, tries):
     think = int(raw_input("What do you think it is?: "))
     if tries == 0:
         print "You are not good at this game"
-        return float(0)
+        return 0
     elif think > random:
         print "You are too high"
         guess(random, tries-1)
@@ -17,13 +17,13 @@ def guess(random, tries):
 
 def rounds(tries, numberofRounds, correct):
     import random
-    random = random.randint(0,100) 
-    print "I am thinking of a number between 0 and 100"  
+    random = random.randint(0,100)  
     if numberofRounds == 0:
         print correct
     elif numberofRounds != 0:
+        print "I am thinking of a number between 0 and 100" 
         round1 = guess(random, tries)
-        total1 = float(correct) + float(round1)
+        total1 = correct + round1
         print "\nYou have " + str(numberofRounds - 1) + " rounds left\n"
         rounds(tries, numberofRounds - 1, total1)
 
@@ -67,7 +67,7 @@ def main():
     numberofRounds = 3
     correct = 0
     computer = random.randint(0,100)
-    #a = rounds(tries, numberofRounds, correct)
+    a = rounds(tries, numberofRounds, correct)
     b = bonus_rounds(tries, numberofRounds, correct)
 
 main()
