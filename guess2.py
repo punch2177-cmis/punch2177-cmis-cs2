@@ -2,22 +2,22 @@ def guess(random, tries):
     think = int(raw_input("What do you think it is?: "))
     if tries == 0:
         print "You are not good at this game"
-        return 0
+        return float(0)
     elif think > random:
         print "You are too high"
         guess(random, tries-1)
-        return 0
+        return float(0)
     elif think < random:
     	print "You are too low"
         guess(random, tries-1)
-        return 0
+        return float(0)
     elif think == random:
         print "You are correct"
-        return 1
+        return float(1)
 
 def rounds(tries, numberofRounds, correct):
     import random
-    random = random.randint(0,100)  
+    random = random.randint(0,2) 
     if numberofRounds == 0:
         print correct
     elif numberofRounds != 0:
@@ -39,13 +39,13 @@ If it is correct, type "Correct"
 """)
     if correct == "High":
         bonus((computer + ((computer - highest)/2)), tries - 1, computer, lowest)
-        return 0
+        return float(0)
     elif correct == "Low":
         bonus(((highest-computer)/2) + computer, tries - 1, highest, computer)
-        return 0
+        return float(0)
     elif correct == "Correct":
         print "You are correct"
-        return 1
+        return float(1)
     
 def bonus_rounds(tries, numberofRounds, correct):
     import random
@@ -57,7 +57,7 @@ def bonus_rounds(tries, numberofRounds, correct):
         highest = 100
         lowest = 0
         rounds = bonus(computer, tries, highest, lowest)
-        total1 = float(correct) + float(rounds)
+        total1 = correct + rounds
         print "\nYou have " + str(numberofRounds - 1) + " rounds left\n"
         bonus_rounds(tries, numberofRounds - 1, total1)    
 
