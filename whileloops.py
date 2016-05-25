@@ -22,4 +22,4 @@ counter(-2)
 def addup(x):
     while x != 0
         print x
-        x
+        x += 
