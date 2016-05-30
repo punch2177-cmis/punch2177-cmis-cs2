@@ -30,19 +30,33 @@ def countfrom(x, y):
 #countfrom(-1, 5)
 #countfrom(5, 1)
 
-def sumofOdds(n):
-    total = 0
-    while n > 0:
-        if n % 2 !=0:
-            total += n 
+def sumofOdds(n, total):
+    while n > 0 and n % 2 != 0:
+        return total + n
+        n -= 1 
+    while n > 0 and n % 2 == 0:
+        return total + 0
         n -= 1
-    while n < 0:
-        if n % 2 != 0:
-            return total + n
-        else:
-            return 0
+    while n < 0 and n % 2 != 0:
+        return total + n
+        n += 1
+    while n < 0  and n % 2 == 0:
+        return total + 0
         n += 1
 
-print sumofOdds(5)
 
+def grid (w, h):
+    out = ""
+    while w >= 0:
+        out += "."
+        w -= 1
+        while w == 0:
+            print "\n"
+            h -= 1
+    print out
+
+def main():
+    grid( 10, 10)
+
+main()
 

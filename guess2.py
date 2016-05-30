@@ -17,7 +17,7 @@ def guess(random, tries):
 
 def rounds(tries, numberofRounds, correct):
     import random
-    random = random.randint(0,2) 
+    random = random.randint(0,100) 
     if numberofRounds == 0:
         print correct
     elif numberofRounds != 0:
