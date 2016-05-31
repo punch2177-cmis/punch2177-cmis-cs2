@@ -12,7 +12,7 @@ def guess(random, tries):
         guess(random, tries-1)
         return float(0)
     elif think == random:
-        print "You are correct"
+        print "You are correct "
         return float(1)
 
 def rounds(tries, numberofRounds, correct):
